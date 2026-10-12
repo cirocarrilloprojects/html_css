@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Define la codificación de caracteres -->
+    <meta charset="UTF-8" />
+
+    <!-- Adapta la página a dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>Formulario HTML completo</title>
+  </head>
+
+  <body>
+    <!-- Título principal del formulario -->
+    <h1>Formulario de registro</h1>
+
+    <!-- FORM: agrupa los campos del formulario
+         action: dirección que recibirá los datos
+         method: método de envío
+         enctype: permite enviar archivos
+         autocomplete: activa el autocompletado
+         target: indica dónde se abre la respuesta -->
+    <form
+      action="/registrar"
+      method="post"
+      enctype="multipart/form-data"
+      autocomplete="on"
+      target="_self"
+    >
+      <!-- FIELDSET: agrupa campos relacionados -->
+      <fieldset>
+        <!-- LEGEND: título del grupo de campos -->
+        <legend>Datos personales</legend>
+
+        <!-- LABEL: identifica el campo mediante for e id -->
+        <label for="nombre">Nombre completo:</label>
+
+        <!-- INPUT TEXT: permite escribir texto
+                 name: nombre del dato enviado
+                 placeholder: texto de ayuda
+                 required: campo obligatorio
+                 minlength y maxlength: longitud permitida
+                 value: valor inicial
+                 id: identifica el campo -->
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          placeholder="Escribe tu nombre"
+          value=""
+          minlength="3"
+          maxlength="60"
+          required
+        />
+        <br /><br />
+
+        <!-- INPUT EMAIL: solicita un correo electrónico -->
+        <label for="correo">Correo electrónico:</label>
+        <input
+          type="email"
+          id="correo"
+          name="correo"
+          placeholder="usuario@ejemplo.com"
+          required
+          autocomplete="email"
+        />
+        <br /><br />
+
+        <!-- INPUT PASSWORD: oculta los caracteres escritos -->
+        <label for="clave">Contraseña:</label>
+        <input
+          type="password"
+          id="clave"
+          name="clave"
+          minlength="8"
+          maxlength="30"
+          required
+          autocomplete="new-password"
+        />
+        <br /><br />
+
+        <!-- INPUT NUMBER: acepta valores numéricos
+                 min y max: límites permitidos
+                 step: intervalo permitido -->
+        <label for="edad">Edad:</label>
+        <input
+          type="number"
+          id="edad"
+          name="edad"
+          min="18"
+          max="100"
+          step="1"
+        />
+        <br /><br />
+
+        <!-- INPUT TEL: campo para teléfono -->
+        <label for="telefono">Teléfono:</label>
+        <input
+          type="tel"
+          id="telefono"
+          name="telefono"
+          placeholder="Ej. 3001234567"
+        />
+        <br /><br />
+
+        <!-- INPUT URL: solicita una dirección web -->
+        <label for="sitio">Página web:</label>
+        <input
+          type="url"
+          id="sitio"
+          name="sitio"
+          placeholder="https://ejemplo.com"
+        />
+        <br /><br />
+
+        <!-- INPUT SEARCH: campo de búsqueda -->
+        <label for="busqueda">Buscar información:</label>
+        <input type="search" id="busqueda" name="busqueda" />
+        <br /><br />
+
+        <!-- INPUT DATE: permite elegir una fecha -->
+        <label for="nacimiento">Fecha de nacimiento:</label>
+        <input type="date" id="nacimiento" name="nacimiento" />
+        <br /><br />
+
+        <!-- INPUT TIME: permite seleccionar una hora -->
+        <label for="hora">Hora preferida:</label>
+        <input type="time" id="hora" name="hora" />
+        <br /><br />
+
+        <!-- INPUT DATETIME-LOCAL: fecha y hora local -->
+        <label for="cita">Fecha y hora de cita:</label>
+        <input type="datetime-local" id="cita" name="cita" />
+        <br /><br />
+
+        <!-- INPUT MONTH: permite elegir mes y año -->
+        <label for="mes">Mes de ingreso:</label>
+        <input type="month" id="mes" name="mes" />
+        <br /><br />
+
+        <!-- INPUT WEEK: permite elegir una semana -->
+        <label for="semana">Semana preferida:</label>
+        <input type="week" id="semana" name="semana" />
+        <br /><br />
+      </fieldset>
+
+      <!-- Grupo de preferencias -->
+      <fieldset>
+        <legend>Preferencias</legend>
+
+        <!-- INPUT RADIO: permite elegir una sola opción
+                 Las opciones comparten el mismo name -->
+        <p>Género:</p>
+
+        <input
+          type="radio"
+          id="masculino"
+          name="genero"
+          value="masculino"
+          checked
+        />
+        <label for="masculino">Masculino</label>
+
+        <input type="radio" id="femenino" name="genero" value="femenino" />
+        <label for="femenino">Femenino</label>
+
+        <input type="radio" id="otro" name="genero" value="otro" />
+        <label for="otro">Otro</label>
+
+        <br /><br />
+
+        <!-- INPUT CHECKBOX: permite marcar varias opciones -->
+        <p>Intereses:</p>
+
+        <input
+          type="checkbox"
+          id="deporte"
+          name="intereses"
+          value="deporte"
+          checked
+        />
+        <label for="deporte">Deporte</label>
+
+        <input type="checkbox" id="musica" name="intereses" value="musica" />
+        <label for="musica">Música</label>
+
+        <input type="checkbox" id="lectura" name="intereses" value="lectura" />
+        <label for="lectura">Lectura</label>
+
+        <br /><br />
+
+        <!-- SELECT: crea una lista desplegable
+                 OPTION: define cada opción
+                 SELECTED: selecciona una opción inicialmente -->
+        <label for="pais">País:</label>
+        <select id="pais" name="pais" required>
+          <option value="" selected disabled>Selecciona un país</option>
+
+          <option value="colombia">Colombia</option>
+          <option value="mexico">México</option>
+          <option value="argentina">Argentina</option>
+
+          <!-- OPTGROUP: agrupa opciones relacionadas -->
+          <optgroup label="Otros países">
+            <option value="peru">Perú</option>
+            <option value="chile">Chile</option>
+            <option value="ecuador">Ecuador</option>
+          </optgroup>
+        </select>
+        <br /><br />
+
+        <!-- DATALIST: proporciona sugerencias
+                 El input se conecta mediante list e id -->
+        <label for="ciudad">Ciudad:</label>
+        <input
+          type="text"
+          id="ciudad"
+          name="ciudad"
+          list="ciudades"
+          placeholder="Escribe una ciudad"
+        />
+
+        <datalist id="ciudades">
+          <option value="Cúcuta"></option>
+          <option value="Bogotá"></option>
+          <option value="Medellín"></option>
+          <option value="Bucaramanga"></option>
+        </datalist>
+
+        <br /><br />
+
+        <!-- INPUT COLOR: permite seleccionar un color -->
+        <label for="color">Color favorito:</label>
+        <input type="color" id="color" name="color" value="#0066cc" />
+        <br /><br />
+
+        <!-- INPUT RANGE: selector deslizante
+                 min y max: límites del valor
+                 step: incremento
+                 value: valor inicial -->
+        <label for="satisfaccion">Nivel de satisfacción:</label>
+        <input
+          type="range"
+          id="satisfaccion"
+          name="satisfaccion"
+          min="0"
+          max="10"
+          step="1"
+          value="5"
+        />
+        <br /><br />
+
+        <!-- TEXTAREA: permite escribir varias líneas -->
+        <label for="comentarios">Comentarios:</label>
+        <textarea
+          id="comentarios"
+          name="comentarios"
+          rows="4"
+          cols="40"
+          placeholder="Escribe tus comentarios aquí..."
+          maxlength="500"
+        ></textarea>
+      </fieldset>
+
+      <!-- Grupo para archivos -->
+      <fieldset>
+        <legend>Archivos</legend>
+
+        <!-- INPUT FILE: permite seleccionar archivos
+                 accept: limita los tipos sugeridos
+                 multiple: permite seleccionar varios archivos -->
+        <label for="documentos">Adjuntar documentos:</label>
+        <input
+          type="file"
+          id="documentos"
+          name="documentos"
+          accept=".pdf,.jpg,.png"
+          multiple
+        />
+      </fieldset>
+
+      <!-- Grupo de opciones adicionales -->
+      <fieldset>
+        <legend>Opciones adicionales</legend>
+
+        <!-- INPUT HIDDEN: envía un dato oculto
+                 No es un mecanismo para proteger información -->
+        <input type="hidden" name="origen" value="formulario_web" />
+
+        <!-- INPUT READONLY: el usuario no puede editar
+                 directamente el valor -->
+        <label for="codigo">Código de registro:</label>
+        <input type="text" id="codigo" name="codigo" value="REG-001" readonly />
+        <br /><br />
+
+        <!-- INPUT DISABLED: campo desactivado
+                 No se envía junto con los datos -->
+        <label for="estado">Estado:</label>
+        <input type="text" id="estado" value="Pendiente" disabled />
+        <br /><br />
+
+        <!-- Atributo PATTERN: valida con una expresión regular
+                 En este caso se esperan exactamente 5 dígitos -->
+        <label for="postal">Código postal (5 dígitos):</label>
+        <input
+          type="text"
+          id="postal"
+          name="postal"
+          pattern="[0-9]{5}"
+          title="Introduce exactamente 5 dígitos"
+        />
+        <br /><br />
+
+        <!-- INPUT IMAGE: botón de envío con una imagen
+                 src indica la ruta de la imagen -->
+        <input
+          type="image"
+          src="boton-enviar.png"
+          alt="Enviar formulario"
+          width="100"
+          height="35"
+        />
+      </fieldset>
+
+      <!-- OUTPUT: muestra el resultado de un cálculo -->
+      <p>
+        Ejemplo de resultado:
+        <output name="resultado">0</output>
+      </p>
+
+      <!-- INPUT SUBMIT: envía el formulario -->
+      <button type="submit">Enviar formulario</button>
+
+      <!-- INPUT RESET: restaura los valores iniciales -->
+      <input type="reset" value="Restablecer" />
+
+      <!-- INPUT BUTTON: botón genérico
+             No ejecuta ninguna acción sin JavaScript -->
+      <input type="button" value="Botón de ejemplo" />
+    </form>
+  </body>
+</html>
