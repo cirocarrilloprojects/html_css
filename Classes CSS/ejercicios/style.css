@@ -1,29 +1,44 @@
 body {
-  background: black;
+  background: #fff;
   font-family: sans-serif;
   color: white;
 }
 .card {
-  background: coral;
+  background: #ff4444;
   text-align: center;
   width: 300px;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 50px;
+  padding: 20px 10px;
+  box-shadow: 0px 0px 25px #0007;
+  border-radius: 8px;
+  margin: 44px;
 }
-h1 {
-  padding-top: 10px;
+
+.card_title {
   font-size: 22px;
   margin: 0;
 }
-h2 {
+
+.card_subtitle {
   font-size: 13px;
-  font-weight: 100px;
+  font-weight: 100;
   letter-spacing: 2px;
+  margin: 0;
+  margin-top: 5px;
 }
 
-p {
+.card_content {
   font-size: 9px;
   padding: 20px;
-  background: lightcoral;
+  padding-bottom: 0;
   text-align: justify;
+  margin-bottom: 0;
+}
+
+.img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
 }

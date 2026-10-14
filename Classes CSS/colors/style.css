@@ -1,6 +1,11 @@
 .box {
-  width: 100px;
-  height: 100px;
-  background: #4f44f4;
-  margin: 10px;
+  padding: 20px 50px;
+  background: hsl(113, 100%, 50%);
+  margin: 20px;
+  margin-left: 100px;
+  text-align: center;
+  color: #fff;
+  border-top: 2px solid hsl(210, 40%, 45%);
+  font-family: sans-serif;
+  font-weight: bold;
 }
